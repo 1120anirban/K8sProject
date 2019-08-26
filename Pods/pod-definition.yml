@@ -6,14 +6,14 @@ metadata:
   name: myapp-pod
   labels:
     app: myapp
-    # costcenter: amer
-    # location: NA
-    # type: front-end
 
 spec:
   containers:
     - name: nginx-container
       image: nginx
 
-    # - name: backend-container
-    #   image: redis
+    - name: postgres
+      image: postgres
+      env:
+        - name: POSTGRES_PASSWORD
+          value: mysecretpassword

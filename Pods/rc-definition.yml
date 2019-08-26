@@ -12,13 +12,14 @@ spec:
       name: myapp-pod
       labels:
         app: myapp
-    containers:
-      - name: nginx-container
-        image: nginx
-      # Db Added
-      - name: postgres
-        image: postgres
-        env:
-          - name: POSTGRES_PASSWORD
-            value: mysecretpassword
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+        # Db Added
+        - name: postgres
+          image: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              value: mysecretpassword
   replicas: 3
